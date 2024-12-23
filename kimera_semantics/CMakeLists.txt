@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(kimera_semantics)
 
 find_package(catkin_simple REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 catkin_simple()
 
@@ -22,6 +23,8 @@ cs_add_library(${PROJECT_NAME}
   src/semantic_tsdf_integrator_merged.cpp
   src/simulation/semantic_simulation_world.cpp
 )
+
+target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
 
 cs_install()
 

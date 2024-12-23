@@ -75,13 +75,13 @@ class PointCloudFromDepth {
                           const sensor_msgs::ImageConstPtr& rgb_msg_in,
                           const sensor_msgs::CameraInfoConstPtr& info_msg) {
     // Check for bad inputs
-    if (depth_msg->header.frame_id != rgb_msg_in->header.frame_id) {
-      LOG(ERROR)
-          << "Depth image frame id [%s] doesn't match RGB image frame id [%s]"
-          << depth_msg->header.frame_id.c_str()
-          << rgb_msg_in->header.frame_id.c_str();
-      return nullptr;
-    }
+    // if (depth_msg->header.frame_id != rgb_msg_in->header.frame_id) {
+    //   LOG(ERROR)
+    //       << "Depth image frame id [%s] doesn't match RGB image frame id [%s]"
+    //       << depth_msg->header.frame_id.c_str()
+    //       << rgb_msg_in->header.frame_id.c_str();
+    //   return nullptr;
+    // }
 
     // Update camera model
     model_.fromCameraInfo(info_msg);
